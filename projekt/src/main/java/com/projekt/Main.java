@@ -21,7 +21,7 @@ public class Main {
             System.out.println("7. Exit");
             System.out.print("Enter your choice: ");
             int choice = scanner.nextInt();
-            scanner.nextLine(); // Consume newline
+            scanner.nextLine(); 
 
             switch (choice) {
                 case 1:
@@ -32,6 +32,7 @@ public class Main {
                     manager.addBook(new Book(0, title, author, false));
                     System.out.println("Book added successfully.");
                     break;
+                    
 
                 case 2:
                     List<Book> books = manager.getAllBooks();
@@ -40,11 +41,12 @@ public class Main {
                         System.out.println(book);
                     }
                     break;
+                    
 
                 case 3:
                     System.out.print("Enter the ID of the book to update: ");
                     int idToUpdate = scanner.nextInt();
-                    scanner.nextLine(); // Consume newline
+                    scanner.nextLine(); 
                     Book bookToUpdate = manager.getBookById(idToUpdate);
                     if (bookToUpdate != null) {
                         System.out.print("Enter new title: ");
@@ -59,6 +61,7 @@ public class Main {
                         System.out.println("Book not found.");
                     }
                     break;
+                    
 
                 case 4:
                     System.out.print("Enter the ID of the book to delete: ");
@@ -66,6 +69,8 @@ public class Main {
                     manager.deleteBook(idToDelete);
                     System.out.println("Book deleted successfully.");
                     break;
+                    
+                    
 
                 case 5:
                     System.out.print("Enter the ID of the book to borrow: ");
@@ -73,16 +78,21 @@ public class Main {
                     manager.borrowBook(idToBorrow);
                     break;
 
+                    
+
                 case 6:
                     System.out.print("Enter the ID of the book to return: ");
                     int idToReturn = scanner.nextInt();
                     manager.returnBook(idToReturn);
                     break;
+                    
+                    
 
                 case 7:
                     System.out.println("Exiting the program...");
                     scanner.close();
                     System.exit(0);
+                    
 
                 default:
                     System.out.println("Invalid choice. Please try again.");
